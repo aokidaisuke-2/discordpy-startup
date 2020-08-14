@@ -1,6 +1,9 @@
-import discord
-import asyncio
+from discord.ext import commands
+import os
+import traceback
 
+bot = commands.Bot(command_prefix='/')
+token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
 
 @client.event
@@ -18,4 +21,4 @@ async def on_message(message):
 
 
 # Botの起動とDiscordサーバーへの接続
-client.run('DISCORD_BOT_TOKEN')
+client.run('token')
